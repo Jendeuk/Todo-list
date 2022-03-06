@@ -1,3 +1,4 @@
+//Timer
 let seconds = 00;
 let tens = 00;
 let appendTens = document.getElementById("tens");
@@ -6,10 +7,15 @@ let buttonStart = document.getElementById("button-start");
 let buttonStop = document.getElementById("button-stop");
 let buttonReset = document.getElementById("button-reset");
 
+// WHAT TO DO LIST:
+const form = document.getElementById("form");
+const input = document.getElementById("input");
+const todosUL = document.getElementById("todos");
+
+const todos = JSON.parse(localStorage.getItem("todos"));
+
 let interval; //Here is to store timer values
-
-//this function will run when click on start
-
+//this function will run when you click on start
 function startTimer() {
   tens++;
 
@@ -29,41 +35,6 @@ function startTimer() {
     appendSeconds.innerHTML = seconds;
   }
 }
-
-buttonStart.onclick = function () {
-  interval = setInterval(startTimer);
-};
-
-buttonStop.onclick = function () {
-  clearInterval(interval);
-};
-
-buttonReset.onclick = function () {
-  clearInterval(interval);
-  tens = "00";
-  seconds = "00";
-  appendSeconds.innerHTML = seconds;
-  appendTens.innerHTML = tens;
-};
-
-// WHAT TO DO LIST:
-const form = document.getElementById("form");
-const input = document.getElementById("input");
-const todosUL = document.getElementById("todos");
-
-const todos = JSON.parse(localStorage.getItem("todos"));
-
-if (todos) {
-  todos.forEach((todo) => {
-    addTodo(todo);
-  });
-}
-
-form.addEventListener("submit", (e) => {
-  e.preventDefault(); // Don't want it to be submitted
-
-  addTodo();
-});
 
 function addTodo(todo) {
   let todoText = input.value;
@@ -118,3 +89,32 @@ function update() {
   });
   localStorage.setItem("todos", JSON.stringify(todos));
 }
+
+// Buttons for the timer
+buttonStart.onclick = function () {
+  interval = setInterval(startTimer);
+};
+
+buttonStop.onclick = function () {
+  clearInterval(interval);
+};
+
+buttonReset.onclick = function () {
+  clearInterval(interval);
+  tens = "00";
+  seconds = "00";
+  appendSeconds.innerHTML = seconds;
+  appendTens.innerHTML = tens;
+};
+
+if (todos) {
+  todos.forEach((todo) => {
+    addTodo(todo);
+  });
+}
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault(); // Don't want it to be submitted
+
+  addTodo();
+});
