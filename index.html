@@ -5,9 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <title>What to do - app</title>
   </head>
   <body>
+    <h1>What to do?</h1>
+    <p class="undertext">
+      Here is a todo-list where you can insert what you have to do here!
+    </p>
+    <!-- timer -->
+    <div class="container">
+      <img id="clock" src="./assets/clock.png" alt="clock" />
+
+      <h2>Here u can add timer</h2>
+      <p><span id="seconds">00</span>: <span id="tens">00</span></p>
+      <button id="button-start">Start</button>
+      <button id="button-stop">Stop</button>
+      <button id="button-reset">Reset</button>
+    </div>
+    <!-- form -->
+    <form id="form">
+      <input
+        type="text"
+        id="input"
+        class="input"
+        placeholder="Enter your todo"
+        autocomplete="off"
+      />
+      <ul class="todos" id="todos"></ul>
+    </form>
+    <p class="reminderText">
+      left click to mark as complete, right click to remove the unwanted list.
+    </p>
+
     <script src="script.js"></script>
   </body>
 </html>
