@@ -5,6 +5,7 @@
 }
 
 body {
+  overflow-x: hidden;
   background-color: #797163;
   margin: 0;
   display: flex;
@@ -15,7 +16,7 @@ body {
 }
 
 header h1 {
-  margin-top: 22px;
+  margin-top: 70px;
   text-align: center;
   color: #f6e0b5;
   font-size: 5rem;
