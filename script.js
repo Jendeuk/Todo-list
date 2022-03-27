@@ -99,7 +99,7 @@ class TodoElement {
     /** Implementation of the task 3. I. b & c) 5 properties and 1 method*/
     this.text = text;
     this.completed = completed;
-    this.colors = ["red", "blue", "pink"];
+    this.colors = ["#aa6f73", "#66545e"];
     // Randomize a color from the array above with methods from the Math object.
     /** Implementation of the task 3. II. d) */
     this.color =

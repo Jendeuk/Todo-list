@@ -5,7 +5,7 @@
 }
 
 body {
-  background-color: #66545e;
+  background-color: #797163;
   margin: 0;
   display: flex;
   align-items: center;
@@ -14,24 +14,32 @@ body {
   color: #41323a;
 }
 
-h1 {
+header h1 {
   margin-top: 22px;
   text-align: center;
   color: #f6e0b5;
   font-size: 5rem;
 }
 
-h2 {
-  font-weight: 100;
-  margin: 10px;
-  color: #f6e0b5;
+/* Shapedivider svg taken from https://www.shapedivider.app/ */
+.custom-shape-divider-top-1648390985 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
 }
 
-.undertext {
-  margin-bottom: 1rem;
-  text-align: center;
-  color: #f6e0b5;
-  font-size: 2rem;
+.custom-shape-divider-top-1648390985 svg {
+  position: relative;
+  display: block;
+  width: calc(147% + 1.3px);
+  height: 123px;
+}
+
+.custom-shape-divider-top-1648390985 .shape-fill {
+  fill: #d9b2a946;
 }
 
 form {
@@ -63,6 +71,7 @@ form > input[type="submit"]:hover {
 
 .input::placeholder {
   color: #d5d5d5;
+  border-radius: 15px;
 }
 
 .todos {
@@ -78,6 +87,7 @@ form > input[type="submit"]:hover {
   font-size: 1.5rem;
   cursor: pointer;
   position: relative;
+  border-radius: 15px;
 }
 .todos > div > p {
   padding-left: 30px;
@@ -118,7 +128,7 @@ form > input[type="submit"]:hover {
 }
 
 .reminderText {
-  font-size: 20px;
+  font-size: 30px;
   margin-top: 3rem;
   color: #f6e0b5;
   text-align: center;
@@ -133,12 +143,12 @@ form > input[type="submit"]:hover {
 }
 
 #clock {
-  width: 100px;
+  width: 165px;
   position: relative;
 }
 
 .timer {
-  font-size: 2em;
+  font-size: 60px;
 }
 
 button,
@@ -163,4 +173,9 @@ input[type="submit"]:hover {
   color: #66545e;
   font-weight: 700;
   cursor: pointer;
+}
+
+#lastModified {
+  font-size: 25px;
+  margin: 18px;
 }
