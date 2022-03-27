@@ -2,9 +2,14 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  outline: none;
 }
 
 body {
+  /* using CSS variables makes the website
+  easy to edit and modify when we need to. */
+  --font-family: "M PLUS 1", sans-serif;
+
   overflow-x: hidden;
   background-color: #797163;
   margin: 0;
@@ -13,13 +18,25 @@ body {
   flex-direction: column;
   min-height: 100vh;
   color: #41323a;
+  font-family: var(--font-family);
 }
 
-header h1 {
+header > div:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header > div:first-child h1 {
   margin-top: 70px;
   text-align: center;
   color: #f6e0b5;
   font-size: 5rem;
+}
+
+header > div:first-child p {
+  color: #f6e0b5;
+  font-size: 2rem;
 }
 
 /* Shapedivider svg taken from https://www.shapedivider.app/ */
@@ -52,7 +69,7 @@ form {
 form > input[type="submit"] {
   position: absolute;
   top: 15px;
-  right: 10px;
+  right: 20px;
   color: #aaa;
   background-color: transparent;
   border: 2px solid #aaa;
@@ -68,6 +85,7 @@ form > input[type="submit"]:hover {
   padding: 1rem 2rem;
   width: 100%;
   font-size: 2rem;
+  border-radius: 1.2rem;
 }
 
 .input::placeholder {
@@ -76,19 +94,20 @@ form > input[type="submit"]:hover {
 }
 
 .todos {
-  background-color: #fff;
   padding: 0;
   margin: 0;
   list-style-type: none;
 }
 
 .todos > div {
+  background-color: white;
   border-top: 1px solid #e5e5e5;
   padding: 1rem 2rem;
   font-size: 1.5rem;
   cursor: pointer;
   position: relative;
   border-radius: 15px;
+  margin: 1rem 0px;
 }
 .todos > div > p {
   padding-left: 30px;
