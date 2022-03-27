@@ -12,17 +12,17 @@
     <p class="undertext">
       Here is a todo-list where you can insert what you have to do here!
     </p>
-    <!-- timer -->
     <div class="container">
       <img id="clock" src="./assets/clock.png" alt="clock" />
 
       <h2>Here you can use the timer if needed</h2>
-      <p><span id="seconds">00</span>: <span id="tens">00</span></p>
+      <p class="timer">
+        <span id="timer-display">00:00:00</span>
+      </p>
       <button id="button-start">Start</button>
       <button id="button-stop">Stop</button>
       <button id="button-reset">Reset</button>
     </div>
-    <!-- form for list -->
     <form id="form">
       <input
         type="text"
@@ -31,12 +31,11 @@
         placeholder="Enter your todo"
         autocomplete="off"
       />
-      <ul class="todos" id="todos"></ul>
+      <div class="todos" id="todos"></div>
+      <input type="submit" value="Add" />
     </form>
-    <p class="reminderText">
-      left click to mark as complete, right click to remove the unwanted list.
-    </p>
-
+    <p class="reminderText" id="stats"></p>
+    <p id="lastModified"></p>
     <script src="script.js"></script>
   </body>
 </html>

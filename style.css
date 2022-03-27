@@ -38,6 +38,19 @@ form {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   width: 400px;
   max-width: 100%;
+  position: relative;
+}
+form > input[type="submit"] {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  color: #aaa;
+  background-color: transparent;
+  border: 2px solid #aaa;
+  margin: 0;
+}
+form > input[type="submit"]:hover {
+  background-color: #aaa;
 }
 
 .input {
@@ -59,16 +72,49 @@ form {
   list-style-type: none;
 }
 
-.todos li {
+.todos > div {
   border-top: 1px solid #e5e5e5;
   padding: 1rem 2rem;
   font-size: 1.5rem;
   cursor: pointer;
+  position: relative;
 }
-
-.todos li.completed {
-  text-decoration: line-through; /* this is for whenever you wanna strike through your done list*/
+.todos > div > p {
+  padding-left: 30px;
+}
+.todos > div > p.completed {
+  text-decoration: line-through;
   color: #939191;
+}
+.todos > div > div {
+  display: block;
+  width: 85%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.todos > div > input {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.todos > div > a.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 10px;
+  width: 40px;
+  margin: 0;
+  color: #aaa;
+  background-color: transparent;
+  border: 2px solid #aaa;
+}
+.todos > div > a.btn:hover {
+  background-color: #aaa;
 }
 
 .reminderText {
@@ -91,12 +137,13 @@ form {
   position: relative;
 }
 
-#seconds,
-#tens {
+.timer {
   font-size: 2em;
 }
 
-button {
+button,
+a.btn,
+input[type="submit"] {
   width: 90px;
   height: 40px;
   color: #fff;
@@ -106,10 +153,14 @@ button {
   margin-right: 10px;
   margin-top: 10px;
   outline: none;
+  transition: background-color 0.5s;
 }
 
-button:hover {
+button:hover,
+a.btn:hover,
+input[type="submit"]:hover {
   background-color: #fff;
   color: #66545e;
   font-weight: 700;
+  cursor: pointer;
 }
