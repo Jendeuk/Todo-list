@@ -4,12 +4,12 @@
   box-sizing: border-box;
   outline: none;
 }
-
-body {
+:root {
   /* using CSS variables makes the website
   easy to edit and modify when we need to. */
   --font-family: "M PLUS 1", sans-serif;
-
+}
+body {
   overflow-x: hidden;
   background-color: #797163;
   margin: 0;
